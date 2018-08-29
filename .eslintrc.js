@@ -78,7 +78,11 @@ module.exports = {
                 props: false
             }
         ],
+<<<<<<< HEAD
         'no-mixed-operators': 0,
         'linebreak-style': ["off", "windows"],
+=======
+        'no-mixed-operators': 0
+>>>>>>> f7cc8c34f24c6d7f47cb9142ed546e55ff9f5d1f
     }
 };
