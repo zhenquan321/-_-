@@ -63,7 +63,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '~@/assets/scss/variable.scss';
-
 .mine {
     background-color: #f4f4f4;
     position: fixed;
