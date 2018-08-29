@@ -138,7 +138,7 @@ export default {
 <style lang="scss" scoped>
 @import '~@/assets/scss/variable.scss';
 .recommend {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 88px;
     bottom: 0;

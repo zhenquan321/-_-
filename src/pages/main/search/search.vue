@@ -106,7 +106,7 @@ export default {
 @import '~@/assets/scss/mixin.scss';
 
 .search {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 88px;
     bottom: 0;

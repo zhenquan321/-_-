@@ -65,7 +65,7 @@ export default {
 @import '~@/assets/scss/variable.scss';
 .mine {
     background-color: #f4f4f4;
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 88px;
     bottom: 0;

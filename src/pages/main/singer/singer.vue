@@ -120,11 +120,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .singer {
-    position: fixed;
+    position: absolute;
     top: 44px;
     bottom: 0;
     width: 100%;
 }
+
 </style>
