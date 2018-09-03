@@ -1,25 +1,25 @@
 <template>
-    <div class="tab">
-        <router-link tag="div" class="tab-item" to="/main/recommend">
-            <span class="tab-link">推荐</span>
-        </router-link>
-        <router-link tag="div" class="tab-item" to="/main/singer">
-            <span class="tab-link">歌手</span>
-        </router-link>
-        <router-link tag="div" class="tab-item" to="/main/rank">
-            <span class="tab-link">排行
+   <div class="tab">
+        <router-link tag="div" class="tab-item demo-flat-button" to="/main/recommend">
+            <span class="tab-link">
+                <i class="iconfont">&#xe67c;</i><br />首页
             </span>
         </router-link>
-        <router-link tag="div" class="tab-item" to="/main/mine">
-            <span class="tab-link">我的</span>
+        <router-link tag="div" class="tab-item" to="/main/singer">
+            <span class="tab-link"><i class="iconfont">&#xe96f;</i><br />分类</span>
         </router-link>
-
+        <router-link tag="div" class="tab-item" to="/main/rank">
+            <span class="tab-link"><i class="iconfont">&#xe678;</i><br />购物车</span>
+        </router-link>
+        <router-link tag="div" class="tab-item" to="/main/mine">
+            <span class="tab-link"><i class="iconfont">&#xe687;</i><br />我的</span>
+        </router-link>
     </div>
-
 </template>
-
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style lang="scss" scoped>
@@ -33,23 +33,29 @@ export default {};
     // right: 0;
     display: flex;
     height: 44px;
-    line-height: 44px;
+    line-height: 16px;
     font-size: $font-size-medium;
-    background-color: $color-theme-background;
+    background-color: #fff;
+    color:$font-color-999;
+    box-shadow: 0 -1px 5px rgba(66, 66, 66, 0.1);
+    padding-top: 6px;
 }
 .tab-item {
     flex: 1;
     text-align: center;
-
     .tab-link {
         padding-bottom: 5px;
-        color: $color-sub-theme;
+        color: $font-color-999;
+        font-size: 12px;
+        i{
+            font-size: 18px;
+        }
     }
 
     &.router-link-active {
         .tab-link {
-            color: $color-text-white;
-            border-bottom: 2px solid $color-text-white;
+            color: $theme-color;
+            // border-bottom: 2px solid $theme-color;
         }
     }
 }

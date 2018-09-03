@@ -67,7 +67,7 @@ export default {
     background-color: #f4f4f4;
     position: absolute;
     width: 100%;
-    top: 88px;
+    top: 44px;
     bottom: 0;
     .mine-content {
         height: 100%;

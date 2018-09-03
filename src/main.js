@@ -4,7 +4,6 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store';
-
 import fastclick from 'fastclick';
 import VueLazyLoad from 'vue-lazyload';
 import '@/assets/scss/index.scss';
@@ -36,7 +35,6 @@ import _switch from 'muse-ui/src/switch';
 // import VConsole from 'vconsole';
 // // 移动端调试
 // const vConsole = new VConsole();
-
 // 懒加载中的图片
 const defaultImage = require('@/assets/image/default.png');
 
@@ -77,3 +75,4 @@ new Vue({
     router,
     render: h => h(App)
 });
+

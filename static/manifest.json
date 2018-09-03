@@ -1,6 +1,6 @@
 {
-    "name": "聚合音乐",
-    "short_name": "聚合音乐",
+    "name": "伊甸农场",
+    "short_name": "伊甸农场",
     "icons": [
         {
             "src": "/static/img/icons/android-chrome-192x192.png",
@@ -17,5 +17,5 @@
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#FAFAFA",
-    "theme_color": "#00BCD4"
+    "theme_color": "#4f79e8"
 }
