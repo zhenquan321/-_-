@@ -149,16 +149,32 @@ export default {
 }
 .slider-wrapper {
     position: relative;
-    width: 100%;
+    width: 94%;
     height: 0;
     padding-top: 40%;
     overflow: hidden;
+    margin: 3%;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     .slider-content {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        .slider-group{
+            height: 100%;
+        }
+        .slider{
+
+            height: 100%;
+            .slider-item{
+                height: 100%;
+                img{
+                    height: 100%;
+                }
+            }
+        }
     }
 }
 .recommend-list {

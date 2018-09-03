@@ -34,9 +34,9 @@ export default {
     // right: 0;
     height: 44px;
     text-align: center;
-    color: $color-text-white;
+    color: $font-color-666;
     font-size: 0;
-    background-color: $color-theme-background;
+    background-color: #fff;
     .text {
         display: inline-block;
         vertical-align: top;
@@ -55,8 +55,14 @@ export default {
         left: 0;
     }
     .material-icons {
-        font-size: 28px;
-        color: $color-sub-theme;
+        font-size: 22px;
+        color:$font-color-666;
+    }
+
+    .mu-icon-button{
+        height: 44px;
+        width: 44px;
+        color: $font-color-666;
     }
 }
 </style>

@@ -188,6 +188,7 @@ export default {
 .slider-group {
     overflow: hidden;
     white-space: nowrap;
+    height: 101%;
 }
 .slider-item {
     float: left;
