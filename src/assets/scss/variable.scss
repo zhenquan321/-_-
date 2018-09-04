@@ -8,13 +8,13 @@ $font-color-999:#999;
 
 
 // 颜色定义规范
-$color-background: #fff;
+$color-background: #fafbfd;
 $color-background-d: rgba(0, 0, 0, 0.3);
 $color-background-l: rgba(0, 0, 0, 0.5);
 $color-background-ll: rgba(0, 0, 0, 0.8);
 $color-background-blur: #222;
 // QQ
-$color-highlight-background: #f4f4f4;
+$color-highlight-background: #fafbfd;
 $color-dialog-background: #666;
 $color-theme-background: #4f79e8;
 // $color-theme: #fff;
@@ -51,3 +51,8 @@ $font-size-medium: 14px;
 $font-size-medium-x: 16px;
 $font-size-large: 18px;
 $font-size-large-x: 22px;
+
+//阴影规范
+$box-shadow:0 2px 10px rgba(0, 0, 0, 0.228);
+$box-shadow-s:0 1px 8px rgba(0, 0, 0, 0.2);
+

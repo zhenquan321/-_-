@@ -7,6 +7,8 @@ import store from './store';
 import fastclick from 'fastclick';
 import VueLazyLoad from 'vue-lazyload';
 import '@/assets/scss/index.scss';
+import MuseUI from 'muse-ui';
+import 'muse-ui/dist/muse-ui.css';
 // Muse-UI组件引入
 import appBar from 'muse-ui/src/appBar';
 // import avatar from 'muse-ui/src/avatar';
@@ -31,6 +33,7 @@ import subHeader from 'muse-ui/src/subHeader';
 import textField from 'muse-ui/src/textField';
 import _switch from 'muse-ui/src/switch';
 
+
 // /* eslint-disable no-unused-vars */
 // import VConsole from 'vconsole';
 // // 移动端调试
@@ -44,6 +47,7 @@ fastclick.attach(document.body);
 Vue.use(VueLazyLoad, {
     loading: defaultImage
 });
+Vue.use(MuseUI);
 Vue.component(appBar.name, appBar);
 // Vue.component(avatar.name, avatar);
 Vue.component(card.name, card);

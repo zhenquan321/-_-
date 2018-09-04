@@ -19,7 +19,31 @@
                     </div>
                 </div>
                 <div class="recommend-list">
-                    <h1 class="list-title">热门歌单推荐</h1>
+                    <!-- <h1 class="list-title">热门歌单推荐</h1> -->
+                    <div class="linkCard">
+                        <mu-flexbox>
+                            <mu-flexbox-item class="flex-demo">
+                                <span class="tab-link">
+                                    <i class="iconfont" style="font-size: 22px;padding-top: 5px;">&#xe601;</i>伊甸套餐
+                                </span>
+                            </mu-flexbox-item>
+                            <mu-flexbox-item class="flex-demo">
+                                <span class="tab-link">
+                                    <i class="iconfont" style="font-size: 22px;padding-top: 5px;">&#xe79a;</i>本周新菜
+                                </span>
+                            </mu-flexbox-item>
+                            <mu-flexbox-item class="flex-demo">
+                                <span class="tab-link">
+                                    <i class="iconfont">&#xe614;</i>农场咨询
+                                </span>
+                            </mu-flexbox-item>
+                            <mu-flexbox-item class="flex-demo">
+                                <span class="tab-link">
+                                    <i class="iconfont">&#xe622;</i>关于我们
+                                </span>
+                            </mu-flexbox-item>
+                        </mu-flexbox>
+                    </div>
                     <ul class="list">
                         <li @click="selectItem(item)" v-for="(item, index) in discList" class="item" :key="index">
                             <div class="icon">
@@ -155,7 +179,7 @@ export default {
     overflow: hidden;
     margin: 3%;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: $box-shadow;
     .slider-content {
         position: absolute;
         top: 0;
@@ -166,7 +190,8 @@ export default {
             height: 100%;
         }
         .slider{
-
+            border-radius: 12px;
+            overflow: hidden;
             height: 100%;
             .slider-item{
                 height: 100%;
@@ -229,5 +254,25 @@ export default {
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
+}
+.linkCard{
+    background-color: #fff;
+    height: 60px;
+    box-shadow: $box-shadow-s;
+    border-radius: 8px;
+    margin: 3%;
+    .tab-link{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        color: $auxiliary-color;
+        font-size: 12px;
+        .iconfont{
+            font-size: 30px;
+            display: block;
+            height: 36px;
+            color: $theme-color;
+        }
+    }
 }
 </style>
