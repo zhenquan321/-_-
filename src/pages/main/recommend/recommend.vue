@@ -265,7 +265,7 @@ export default {
         display: inline-block;
         width: 100%;
         text-align: center;
-        color: $auxiliary-color;
+        color: $font-color-666;
         font-size: 12px;
         .iconfont{
             font-size: 30px;
