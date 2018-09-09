@@ -31,22 +31,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const apiRoutes = express.Router();
 const userRoutes = express.Router();
-apiRoutes.get('/getDiscList', async (req, res) => {
-    const url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg';
-    try {
-        const response = await axios.get(url, {
-            headers: {
-                referer: 'https://c.y.qq.com/',
-                host: 'c.y.qq.com'
-            },
-            params: req.query
-        });
-        res.json(response.data);
-    } catch (err) {
-        console.error(err);
-        throw err;
-    }
-});
+// apiRoutes.get('/getDiscList', async (req, res) => {
+//     const url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg';
+//     try {
+//         const response = await axios.get(url, {
+//             headers: {
+//                 referer: 'https://c.y.qq.com/',
+//                 host: 'c.y.qq.com'
+//             },
+//             params: req.query
+//         });
+//         res.json(response.data);
+//     } catch (err) {
+//         console.error(err);
+//         throw err;
+//     }
+// });
 apiRoutes.get('/getSongList', async (req, res) => {
     const url =
         'https://c.y.qq.com/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg';
@@ -119,8 +119,8 @@ userRoutes.post('/login', (req, res) => {
             data: {
                 uid: '1',
                 username: 'pyyzcwg2833',
-                nickname: '风硕依源',
-                mobile: '13201685806',
+                nickname: '测试',
+                mobile: '158554584',
                 register_time: 1513781141482,
                 last_login_time: 1513781141482
             }

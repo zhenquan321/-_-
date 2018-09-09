@@ -39,7 +39,7 @@ import _switch from 'muse-ui/src/switch';
 // // 移动端调试
 // const vConsole = new VConsole();
 // 懒加载中的图片
-const defaultImage = require('@/assets/image/default.png');
+const defaultImage = require('@/assets/image/default.gif');
 
 Vue.config.productionTip = false;
 fastclick.attach(document.body);

@@ -1,5 +1,5 @@
 <template>
-    <pure-music-list title="最近收听" :songs="playHistory"></pure-music-list>
+    <pure-music-list title="订单" :songs="playHistory"></pure-music-list>
 </template>
 <script>
 import PureMusicList from '@/components/pure-music-list/pure-music-list';

@@ -33,6 +33,7 @@ html {
 .mu-item {
     padding: 2px 16px !important;
     align-items: center !important;
+    min-height: 40px!important;
 }
 .mu-item-left {
     position: static !important;
@@ -83,3 +84,51 @@ html {
 }
 
 
+.headerTitle{
+    height: 38px;
+    vertical-align: top;
+    margin: 0 3%;
+    margin-top: 25px;
+    .HT-Title{
+        display: inline-block;
+        float: left;
+        margin: 0;
+        vertical-align: top;
+        font-size: 18px;
+        font-weight: 600;
+        color:$font-color-333;
+    }
+    .HT-selBtn{
+        float: right;
+        margin: 0;
+        vertical-align: top;
+        font-size: 14px;
+        font-weight: 500;
+        color:$font-color-999;
+        padding-right: 5px;
+        i{
+            font-size: 14px;
+            width: 5px;
+            display: inline-block;
+        }
+        span{
+            margin-left: 5px;
+        }
+    }
+}
+.mu-popup{
+    width: 100%;
+}
+.mu-menu-item-wrapper{
+    height: 40px;
+    line-height: 40px;
+}
+.mu-menu-item-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    width: 100%;
+    text-align: center;
+    padding-right: 20px;
+}

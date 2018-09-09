@@ -20,4 +20,4 @@ export const options = {
 /**
  * @constant {Number} ERR_OK
  */
-export const ERR_OK = 0;
+export const ERR_OK = 'ok';

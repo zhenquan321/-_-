@@ -220,11 +220,11 @@ export default {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: $color-text-white-l;
+    background: rgba(255, 255, 255, 0.7);
     &.active {
         width: 20px;
         border-radius: 5px;
-        background: $color-text-white-ll;
+        background: rgba(79, 121, 232, 0.8);
     }
 }
 </style>
