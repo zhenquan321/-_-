@@ -7,7 +7,7 @@
         </div>
         <!-- 滚动提示点 -->
         <div class="dots">
-            <span class="dot" v-for="(item, index) in dots" :key="index" :class="{active: currentPageIndex===index}"></span>
+            <span class="dot" v-for="(item, index) in dots" :key="index" :class="{active: currentPageIndex===index-1}"></span>
         </div>
     </div>
 </template>
@@ -25,7 +25,7 @@ export default {
     data() {
         return {
             dots: [],
-            currentPageIndex: 0
+            currentPageIndex: -1
         };
     },
     props: {
@@ -220,11 +220,12 @@ export default {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid $theme-color;
     &.active {
         width: 20px;
         border-radius: 5px;
-        background: rgba(79, 121, 232, 0.8);
+        background:$theme-color;
     }
 }
 </style>

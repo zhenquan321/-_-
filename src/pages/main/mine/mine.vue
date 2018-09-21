@@ -2,40 +2,43 @@
     <div class="mine">
         <scroll :data="discList" class="mine-content">
             <div class="userCard">
+                <!-- <div class="setting">
+                    <i class="iconfont">&#xe70f;</i>
+                </div> -->
                 <mu-row gutter>
                     <mu-col class="left" width="25" tablet="60" desktop="15">
-                        <img src="http://img5.duitang.com/uploads/item/201506/14/20150614205903_85zCv.jpeg"  alt="">
+                        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2344988148,518557205&fm=26&gp=0.jpg"  alt="">
                     </mu-col>
                     <mu-col class="center" width="60" tablet="60" desktop="35">
                         <h4>用户名</h4>
                         <h5>ID:18468644186</h5>
                     </mu-col>
                     <mu-col class="right" width="15" tablet="60" desktop="35">
-                        <i class="iconfont">&#xe801;</i>
+
                     </mu-col>
                 </mu-row>
             </div>
             <div class="myOrderList">
-                <h2>我的订单</h2>
+                <!-- <h2>我的订单</h2> -->
                 <mu-flexbox  disableRipple>
                     <mu-flexbox-item class="flex-demo">
                         <span class="tab-link"  @click="enterHistory">
-                            <i class="iconfont" >&#xe936;</i>待付款
+                            <i class="iconfont" >&#xe641;</i>待付款
                         </span>
                     </mu-flexbox-item>
                     <mu-flexbox-item class="flex-demo">
                         <span class="tab-link"  @click="enterHistory">
-                            <i class="iconfont">&#xe88a;</i>待发货
+                            <i class="iconfont">&#xe647;</i>待发货
                         </span>
                     </mu-flexbox-item>
                     <mu-flexbox-item class="flex-demo">
                         <span class="tab-link"  @click="enterHistory">
-                            <i class="iconfont">&#xe886;</i>待收货
+                            <i class="iconfont">&#xe642;</i>待收货
                         </span>
                     </mu-flexbox-item>
                     <mu-flexbox-item class="flex-demo">
                         <span class="tab-link"  @click="enterHistory">
-                            <i class="iconfont"  style="font-size: 23px;padding-top: 4px;">&#xe83d;</i>已完成
+                            <i class="iconfont"  style="font-size: 23px;padding-top: 4px;">&#xe640;</i>已完成
                         </span>
                     </mu-flexbox-item>
                 </mu-flexbox>
@@ -44,22 +47,22 @@
             <div class="tabListCard">
                 <mu-list>
                     <mu-list-item>
-                        <mu-row gutter class="ListItem">
+                        <mu-row gutter class="ListItem" style="border-bottom: 1px solid #EBEBEB;">
                             <mu-col class="left" width="15" tablet="60" desktop="15">
-                                <i class="iconfont">&#xe611;</i>
+                                <i class="iconfont">&#xe62b;</i>
                             </mu-col>
                             <mu-col class="center" width="50" tablet="60" desktop="35">
                                 伊甸卡余额
                             </mu-col>
-                            <mu-col class="right" width="35" tablet="60" desktop="35" style="color:#33cbb4">
+                            <mu-col class="right" width="35" tablet="60" desktop="35" style="color:#ff5757">
                                 ￥15555.52
                             </mu-col>
                         </mu-row>
                     </mu-list-item>
-                    <mu-list-item disableRipple @click="enterFavoriteSongs">
-                        <mu-row gutter class="ListItem" @click="enterHistory">
+                    <mu-list-item disableRipple @click="enterFavoriteSongs"  >
+                        <mu-row gutter class="ListItem" @click="enterHistory" style="border-bottom: 1px solid #EBEBEB;">
                             <mu-col class="left" width="15" tablet="60" desktop="15">
-                                <i class="iconfont">&#xe70c;</i>
+                                <i class="iconfont">&#xe662;</i>
                             </mu-col>
                             <mu-col class="center" width="75" tablet="60" desktop="35">
                                 地址管理
@@ -69,10 +72,10 @@
                             </mu-col>
                         </mu-row>
                     </mu-list-item>
-                      <mu-list-item disableRipple @click="enterFavoriteSongs">
-                        <mu-row gutter class="ListItem" >
+                      <mu-list-item disableRipple @click="enterFavoriteSongs"  >
+                        <mu-row gutter class="ListItem" style="border-bottom: 1px solid #EBEBEB;">
                             <mu-col class="left" width="15" tablet="60" desktop="15">
-                                <i class="iconfont">&#xe6fc;</i>
+                                <i class="iconfont">&#xe665;</i>
                             </mu-col>
                             <mu-col class="center" width="75" tablet="60" desktop="35">
                                 站内消息
@@ -82,10 +85,10 @@
                             </mu-col>
                         </mu-row>
                     </mu-list-item>
-                      <mu-list-item disableRipple @click="enterFavoriteSongs">
-                        <mu-row gutter class="ListItem" >
+                      <mu-list-item disableRipple @click="enterFavoriteSongs" >
+                        <mu-row gutter class="ListItem"  style="border-bottom: 1px solid #EBEBEB;">
                             <mu-col class="left" width="15" tablet="60" desktop="15">
-                                <i class="iconfont">&#xe6ff;</i>
+                                <i class="iconfont">&#xe65c;</i>
                             </mu-col>
                             <mu-col class="center" width="75" tablet="60" desktop="35">
                                 授权手机号
@@ -98,7 +101,7 @@
                       <mu-list-item disableRipple @click="enterFavoriteSongs">
                         <mu-row gutter class="ListItem">
                             <mu-col class="left" width="15" tablet="60" desktop="15">
-                                <i class="iconfont">&#xe90f;</i>
+                                <i class="iconfont">&#xe627;</i>
                             </mu-col>
                             <mu-col class="center" width="75" tablet="60" desktop="35">
                                 切换商家
@@ -172,6 +175,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '~@/assets/scss/variable.scss';
+@import '~@/assets/scss/mixin.scss';
 .mine {
     background-color: #f4f4f4;
     position: absolute;
@@ -231,38 +235,35 @@ export default {
         font-weight: 600;
     }
     background-color: #fff;
-
-    box-shadow: $box-shadow;
-    border-radius: 8px;
-    margin: 3%;
+    // box-shadow: $box-shadow;
+    // border-radius: 8px;
+    // margin: 3%;
     .tab-link{
         display: inline-block;
         width: 100%;
         text-align: center;
         color: $font-color-666;
         font-size: 12px;
-        margin-top: 4px;
+        margin-top: 6px;
         margin-bottom: 10px;
         .iconfont{
             font-size: 30px;
             display: block;
             height: 36px;
             color:  $auxiliary-color;
-            background: linear-gradient(135deg, #fddcab, #0008ff);
+            background: linear-gradient(135deg,  #ae9a47, #44c050);
             -webkit-background-clip: text;
             color: transparent;
         }
     }
 }
 .userCard{
-    background: -webkit-linear-gradient(0deg,#5583fe, #5077e9); /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(0deg, #5583fe, #5077e9); /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(0deg, #5583fe, #5077e9); /* Firefox 3.6 - 15 */
-    background: linear-gradient(0deg, #5583fe, #5077e9); /* 标准的语法 */
+    @include bg-image('beijing');
+    background-size:100%;
+    height: 144px;
     box-shadow: $box-shadow;
-    border-radius: 8px;
-    margin: 3%;
     padding: 30px;
+    padding-top: 55px;
     .left{
         img{
             width: 100%;
@@ -273,7 +274,8 @@ export default {
     .center{
         h4{
             color: #fff;
-            font-size: 26px;
+            font-size: 20px;
+            margin-top: 5px;
         }
         h5{
             color: rgba(255, 255, 255, 0.7);
@@ -286,26 +288,37 @@ export default {
 }
 .tabListCard{
     background-color: #fff;
-    box-shadow: $box-shadow;
-    border-radius: 8px;
-    margin: 3%;
+    margin-top: 10px;
+    // box-shadow: $box-shadow;
+    // border-radius: 8px;
+    // margin: 3%;
 }
-
+.mu-item{
+    padding: 0px 16px !important;
+}
+.mu-list{
+    padding: 0;
+}
 .ListItem{
+    height: 48px;
+    margin-bottom: 0px!important;
     .left{
         text-align: center;
+        position: relative;
+        top: 6px;
         i{
             font-size: 22px;
-            color: #b3b9cf;
+            color: #A2A2A2;
         }
     }
     .center{
         text-align: left;
-        line-height: 34px;
+        line-height: 46px;
         color: #666;
+        margin-left: -25px;
     }
     .right{
-        line-height: 34px;
+        line-height: 46px;
         text-align: right;
         i{
             font-size: 13px;

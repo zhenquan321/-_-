@@ -22,22 +22,22 @@
                     <mu-flexbox>
                         <mu-flexbox-item class="flex-demo">
                             <span class="tab-link">
-                                <i class="iconfont" style="font-size: 22px;padding-top: 5px;">&#xe601;</i>伊甸套餐
+                                <img class="iconImg" src="~@/assets/image/icon/icon2.png"><span>伊甸套餐</span>
                             </span>
                         </mu-flexbox-item>
                         <mu-flexbox-item class="flex-demo">
                             <span class="tab-link">
-                                <i class="iconfont" style="font-size: 22px;padding-top: 5px;">&#xe79a;</i>本周新菜
+                                <img class="iconImg" src="~@/assets/image/icon/icon4.png"><span>本周新菜</span>
                             </span>
                         </mu-flexbox-item>
                         <mu-flexbox-item class="flex-demo">
                             <span class="tab-link">
-                                <i class="iconfont">&#xe614;</i>农场咨询
+                                <img class="iconImg" src="~@/assets/image/icon/icon3.png"><span>农场咨询</span>
                             </span>
                         </mu-flexbox-item>
                         <mu-flexbox-item class="flex-demo">
                             <span class="tab-link">
-                                <i class="iconfont">&#xe622;</i>关于我们
+                                <img class="iconImg" src="~@/assets/image/icon/icon1.png"><span>关于我们</span>
                             </span>
                         </mu-flexbox-item>
                     </mu-flexbox>
@@ -234,13 +234,13 @@ export default {
 }
 .slider-wrapper {
     position: relative;
-    width: 94%;
+    // width: 94%;
     height: 0;
     padding-top: 40%;
     overflow: hidden;
-    margin: 3%;
-    border-radius: 12px;
-    box-shadow: $box-shadow;
+    // margin: 3%;
+    // border-radius: 12px;
+    // box-shadow: $box-shadow;
     .slider-content {
         position: absolute;
         top: 0;
@@ -251,7 +251,7 @@ export default {
             height: 100%;
         }
         .slider{
-            border-radius: 12px;
+            // border-radius: 12px;
             overflow: hidden;
             height: 100%;
             .slider-item{
@@ -264,7 +264,7 @@ export default {
     }
 }
 .recommend-list {
-    background-color: $color-background;
+    background-color: #fff;
     .list-title {
         height: 65px;
         line-height: 65px;
@@ -273,10 +273,10 @@ export default {
         color: $color-text;
     }
     .list {
-        background-color: #fff;
-        margin: 0 3%;
-        border-radius: 12px;
-        box-shadow: $box-shadow-s;
+        // background-color: #fff;
+        // margin: 0 3%;
+        // border-radius: 12px;
+        // box-shadow: $box-shadow-s;
         :last-child{
             border: 0;
         }
@@ -313,6 +313,7 @@ export default {
                 overflow: hidden;
                 white-space: nowrap;
                 color: $auxiliary-color;
+                font-weight: 600;
             }
         }
     }
@@ -325,27 +326,27 @@ export default {
 }
 .linkCard{
     background-color: #fff;
-    height: 66px;
-    box-shadow: $box-shadow;
-    border-radius: 8px;
-    margin: 3%;
+    height: 90px;
+    padding-top: 10px;
+    // box-shadow: $box-shadow;
+    // border-radius: 8px;
+    // margin: 3%;
     .tab-link{
         display: inline-block;
         width: 100%;
         text-align: center;
         font-size: 12px;
         margin-top: 4px;
-        background: linear-gradient(135deg,#28c6d6,#8e0000);
+        // background: linear-gradient(135deg,#28c6d6,#8e0000);
         -webkit-background-clip: text;
         color: transparent;
-        .iconfont{
-            font-size: 30px;
+        .iconImg{
+            width: 44px;
+            height: 44px;
+        }
+        span{
             display: block;
-            height: 36px;
-            color:  $auxiliary-color;
-            background: linear-gradient(135deg,#58fbeb, #fd7500);
-            -webkit-background-clip: text;
-            color: transparent;
+            color: #333;
         }
     }
 }

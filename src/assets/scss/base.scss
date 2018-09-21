@@ -88,15 +88,20 @@ html {
     height: 38px;
     vertical-align: top;
     margin: 0 3%;
-    margin-top: 25px;
+    margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 6px;
     .HT-Title{
         display: inline-block;
         float: left;
         margin: 0;
         vertical-align: top;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 16px;
         color:$font-color-333;
+        border-left:3px solid $theme-color;
+        padding-left: 10px;
+        height: 16px;
+        line-height: 16px;
     }
     .HT-selBtn{
         float: right;
@@ -104,7 +109,7 @@ html {
         vertical-align: top;
         font-size: 14px;
         font-weight: 500;
-        color:$font-color-999;
+        color:$theme-color;
         padding-right: 5px;
         i{
             font-size: 14px;
@@ -113,6 +118,19 @@ html {
         }
         span{
             margin-left: 5px;
+        }
+    }
+    .HT-selBtn>span{
+        border: 1px solid $theme-color;
+        padding: 2px 5px 1px 1px;
+        border-radius: 5px;
+        font-size: 12px;
+        position: relative;
+        top: -5px;
+        right: -5px;
+        i{
+            position: relative;
+            top: 1px;
         }
     }
 }
