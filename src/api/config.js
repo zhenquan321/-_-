@@ -20,4 +20,9 @@ export const options = {
 /**
  * @constant {Number} ERR_OK
  */
+
 export const ERR_OK = 'ok';
+
+// export const baseUrl = 'https://home.ydnc.com.cn';
+
+export const baseUrl = '';

@@ -5,8 +5,7 @@
  */
 import axios from 'axios';
 // import jsonp from '@/assets/js/jsonp';
-// import { commonParam, options } from './config';
-import { commonParam } from './config';
+import { commonParam, baseUrl } from './config';
 
 /**
  * @function getRecommend 获取推荐数据(Banner)
@@ -27,7 +26,7 @@ import { commonParam } from './config';
 // }
 
 /**
- * @function getRecommend 获取推荐数据(Banner)
+ * @function getRecommend 获取(Banner)
  * @returns {Promise}
  */
 export function getRecommend() {
@@ -36,13 +35,13 @@ export function getRecommend() {
     // return axios.post(url, {
     //     params: data
     // }).then(res => Promise.resolve(res.data));
-    return axios.get(url, {
+    return axios.get(baseUrl + url, {
         params: data
     }).then(res => Promise.resolve(res.data));
 }
 
 /**
- * @function getDiscList 获取推荐歌单列表
+ * @function getDiscList 获取推荐数据
  */
 export function getDiscList(isnew, sort2, desc2, size2) {
     // const url = '/api/getDiscList';
@@ -67,7 +66,7 @@ export function getDiscList(isnew, sort2, desc2, size2) {
         size: size2
     };
     return axios
-        .get(url, {
+        .get(baseUrl + url, {
             params: data
         })
         .then(res => Promise.resolve(res.data));

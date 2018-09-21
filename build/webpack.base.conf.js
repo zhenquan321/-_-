@@ -91,6 +91,7 @@ module.exports = {
                 }
             ]
         }),
+
         new HappyPack({
             id: 'museui',
             threadPool: happyThreadPool,
