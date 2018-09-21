@@ -81,7 +81,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main-body {
-    height: calc(100vh - 88px);
+    height: calc(100vh - 94px);
     // position: fixed;
     // width:100%;
     top: 44px;

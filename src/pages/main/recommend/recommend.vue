@@ -52,11 +52,21 @@
                     <ul class="list">
                         <li @click="selectItem(item)" v-for="(item, index) in discList" class="item" :key="index">
                             <div class="icon">
-                                <img width="60" height="60" v-lazy="item.image_url" alt="discItem">
+                                <img width="110" height="110" v-lazy="item.image_url" alt="discItem">
                             </div>
                             <div class="text">
                                 <h2 class="name" v-html="item.goods_name"></h2>
-                                <p class="desc" >￥{{item.group_price}}</p>
+                                <h3>已售{{item.sell_count}}件</h3>
+                                <mu-row gutter class="jiageCard">
+                                    <mu-col class="left" width="60" tablet="60" desktop="15">
+                                        <p class="desc1">市场价：￥{{item.market_price}}</p>
+                                        <p class="desc2">抢购价：<span>￥{{item.group_price}}</span></p>
+                                    </mu-col>
+                                    <mu-col class="center" width="40" tablet="60" desktop="35">
+                                        <button>立即抢购</button>
+                                    </mu-col>
+                                </mu-row>
+
                             </div>
                         </li>
                     </ul>
@@ -64,21 +74,29 @@
                 <div class="recommend-list">
                     <div class="headerTitle">
                         <h1 class="HT-Title">最新上架</h1>
-                        <!-- <h4 class="HT-selBtn" @click="open('bottom')">
-                            <span><i class="iconfont" >&#xeb04;</i><i class="iconfont">&#xeb05;</i> <span >排序</span></span>
-                        </h4> -->
+                        <h4 class="HT-selBtn" @click="open('bottom')">
+                            <span><span >更多>></span></span>
+                        </h4>
                     </div>
-                    <ul class="list">
-                        <li @click="selectItem(item)" v-for="(item, index) in discListNew" class="item" :key="index">
-                            <div class="icon">
-                                <img width="60" height="60" v-lazy="item.image_url" alt="discItem">
-                            </div>
-                            <div class="text">
-                                <h2 class="name" v-html="item.goods_name"></h2>
-                                <p class="desc" >￥{{item.group_price}}</p>
-                            </div>
-                        </li>
-                    </ul>
+                        <mu-row gutter class="jiageCardLsit">
+                            <mu-col class="jiageCard"  width="33"  @click="selectItem(item)" v-for="(item, index) in discListNew" :key="index">
+                                <div class="icon">
+                                    <img width="60" height="60" v-lazy="item.image_url" alt="discItem">
+                                </div>
+                                <div class="text">
+                                    <h2 class="name" v-html="item.goods_name"></h2>
+                                </div>
+                                <mu-row>
+                                    <mu-col  width="66">
+                                        <p class="desc1">￥{{item.market_price}}</p>
+                                        <p class="desc2">￥{{item.group_price}}</p>
+                                    </mu-col>
+                                    <mu-col  width="33">
+                                        <span class="addGm"><span>+</span></span>
+                                    </mu-col>
+                                </mu-row>
+                            </mu-col>
+                        </mu-row>
                     <div style="height:60px"></div>
                 </div>
             </div>
@@ -290,8 +308,8 @@ export default {
         padding: 10px;
         border-bottom: 1px solid #efefef;
         .icon {
-            flex: 0 0 60px;
-            width: 60px;
+            flex: 0 0 110px;
+            width: 110px;
             padding-right: 20px;
         }
         .text {
@@ -303,18 +321,36 @@ export default {
             overflow: hidden;
             font-size: $font-size-medium;
             padding-left: 15px;
+
             .name {
-                margin-bottom: 10px;
-                color: $color-text;
+                margin-bottom: 2px;
+                color: #333;
+                font-size: 16px;
             }
-            .desc {
+            h3{
+                color: #666;
+                font-size: 14px;
+            }
+            .desc1 {
                 width: 100%;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;
                 color: $auxiliary-color;
-                font-weight: 600;
+                font-size: 12px;
+                color: #999999;
+                // text-decoration:line-through
             }
+             .desc2 {
+                font-size: 12px;
+                color: #333333;
+                span{
+                    color: #FF5757;
+                    font-size: 18px;
+                    font-weight: 600;
+
+                }
+             }
         }
     }
 }
@@ -349,8 +385,66 @@ export default {
             color: #333;
         }
     }
-}
 
+}
+.jiageCard{
+    margin-top: 20px;
+    .center {
+        button{
+            width: 78px;
+            height: 28px;
+            color: #fff;
+            background-color: $auxiliary-color;
+            border-radius:4px;
+            margin-top: 10px;
+            float: right;
+            line-height: 28px;
+        }
+    }
+}
+.jiageCardLsit{
+    padding: 5px;
+    .jiageCard{
+        padding: 3px;
+        margin-top: 3px;
+    }
+    img{
+        width: 117px;
+        height: 117px;
+    }
+    .text h2{
+        font-size: 12px;
+        color: #333333;
+    }
+    .desc1{
+        font-size: 12px;
+        color: #888888;
+        text-decoration:line-through;
+        line-height: 12px;
+        margin-top: 10px;
+    }
+    .desc2{
+        font-size: 14px;
+        color: #FF5757;
+    }
+    .addGm{
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        font-size:22px;
+        background: #FFFFFF;
+        border: 1px solid #C8C8C8;
+        border-radius: 4px;
+        margin-top: 18px;
+        float: right;
+        color: #44c050;
+        span{
+            position: relative;
+            top: -8px;
+            left: 3px;
+        }
+    }
+}
 .demo-popup-bottom {
   width: 100%;
 }

@@ -32,13 +32,13 @@ export default {
     // left: 0;
     // right: 0;
     display: flex;
-    height: 44px;
+    height: 50px;
     line-height: 16px;
     font-size: $font-size-medium;
     background-color: #fff;
     color:$font-color-999;
     box-shadow: 0 -1px 5px rgba(66, 66, 66, 0.1);
-    padding-top: 6px;
+    padding-top: 10px;
 }
 .tab-item {
     flex: 1;
@@ -48,7 +48,7 @@ export default {
         color: $font-color-999;
         font-size: 12px;
         i{
-            font-size: 18px;
+            font-size: 22px;
         }
     }
 
