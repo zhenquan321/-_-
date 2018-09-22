@@ -47,6 +47,23 @@
           if (file.match(/\.(js|css)$/)) { %>
         <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
         <% }}} %>
+
+    <script>
+        function fnResize() {
+            var deviceWidth = document.documentElement.clientWidth || window.innerWidth
+            if (deviceWidth >= 750) {
+                deviceWidth = 750
+            }
+            if (deviceWidth <= 320) {
+                deviceWidth = 320
+            }
+            document.documentElement.style.fontSize = (deviceWidth / 7.5) + 'px'
+        }
+        fnResize();
+        window.onresize = function () {
+            fnResize()
+        }
+    </script>
 </head>
 
 <body>

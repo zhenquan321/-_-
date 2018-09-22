@@ -23,6 +23,6 @@ export const options = {
 
 export const ERR_OK = 'ok';
 
-// export const baseUrl = 'https://home.ydnc.com.cn';
+export const baseUrl = 'https://home.ydnc.com.cn';
 
-export const baseUrl = '';
+// export const baseUrl = '';

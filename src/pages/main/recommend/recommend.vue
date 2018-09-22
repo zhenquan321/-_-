@@ -73,14 +73,14 @@
                 <div class="recommend-list">
                     <div class="headerTitle">
                         <h1 class="HT-Title">最新上架</h1>
-                        <h4 class="HT-selBtn" @click="open('bottom')">
+                        <h4 class="HT-selBtn">
                             <span><span >更多>></span></span>
                         </h4>
                     </div>
                         <mu-row gutter class="jiageCardLsit">
-                            <mu-col class="jiageCard"  width="33"  @click="selectItem(item)" v-for="(item, index) in discListNew" v-if="index<6"  :key="index">
-                                <div class="icon">
-                                    <img width="60" height="60" v-lazy="item.image_url" alt="discItem">
+                            <mu-col class="jiageCard" id="ssawd" width="33"  @click="selectItem(item)" v-for="(item, index) in discListNew" v-if="index<6"  :key="index">
+                                <div class="icon" >
+                                    <img   v-lazy="item.image_url" alt="discItem">
                                 </div>
                                 <div class="text">
                                     <h2 class="name" v-html="item.goods_name"></h2>
@@ -91,7 +91,7 @@
                                         <p class="desc2">￥{{item.group_price}}</p>
                                     </mu-col>
                                     <mu-col  width="33">
-                                        <span class="addGm"><span>+</span></span>
+                                        <span class="addGm"><span> <i class="iconfont" >&#xe6df;</i></span></span>
                                     </mu-col>
                                 </mu-row>
                             </mu-col>
@@ -201,6 +201,13 @@ export default {
             try {
                 const res = await getDiscList(isnew2, this.seltype, this.sortType, this.size);
                 if (res.result === ERR_OK) {
+                    // setTimeout(() => {
+                    //     const dom = document.getElementsByClassName('icon');
+                    //     for (let i = 0; i < dom.length; i += 1) {
+                    //         const he = document.getElementById('ssawd').offsetHeight;
+                    //         dom[i].style.height = he + 'px';
+                    //     }
+                    // }, 1000);
                     if (isnew) {
                         this.discListNew = res.goods;
                     } else {
@@ -309,7 +316,11 @@ export default {
         .icon {
             flex: 0 0 110px;
             width: 110px;
+            height: 110px!important;
             padding-right: 20px;
+            img{
+                height: 100%;
+            }
         }
         .text {
             display: flex;
@@ -406,14 +417,23 @@ export default {
     .jiageCard{
         padding: 3px;
         margin-top: 3px;
+        .icon{
+           min-height: 2.1rem;
+           width: 2.1rem!important;
+        }
     }
     img{
-        width: 117px;
-        height: 117px;
+        width: 2.1rem;
+        height:  2.1rem;
+
     }
     .text h2{
         font-size: 12px;
         color: #333333;
+        margin-top: 4px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap
     }
     .desc1{
         font-size: 12px;

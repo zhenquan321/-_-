@@ -5,7 +5,7 @@
                 <i class="iconfont">&#xe67c;</i><br />首页
             </span>
         </router-link>
-        <router-link tag="div" class="tab-item" to="/main/classification">
+        <router-link tag="div" class="tab-item" to="/main/singer">
             <span class="tab-link"><i class="iconfont">&#xe96f;</i><br />分类</span>
         </router-link>
         <router-link tag="div" class="tab-item" to="/main/rank">

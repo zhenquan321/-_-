@@ -31,12 +31,9 @@ export function GoodsCateNclists(cidD) {
  * @function Goodslists 获取分类二级列表
  * @returns {Promise}
  */
-export function Goodslists(cidD) {
+export function Goodslists(dataC) {
     const url = '/api/Goods/lists';
-    const data = {
-        cate_id: cidD
-    };
     return axios.get(baseUrl + url, {
-        params: data
+        params: dataC
     }).then(res => Promise.resolve(res.data));
 }
