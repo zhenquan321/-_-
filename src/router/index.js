@@ -43,6 +43,14 @@ const ChangeDevice = () =>
 // 错误页
 const NotFound = () => import('@/pages/not-found/not-found');
 
+
+// 分类页____________________________________NEW_______________________________________
+const classification = () => import('@/pages/main/classification/classification');
+// 详情
+const productDetailsPage = () => import('@/pages/main/productDetailsPage/productDetailsPage');
+// 详情组件
+const productDetails = () => import('@/components/productDetails/productDetails');
+
 Vue.use(Router);
 
 const router = new Router({
@@ -110,6 +118,25 @@ const router = new Router({
                         }
                     ]
                 },
+                {
+                    path: 'productDetailsPage',
+                    component: productDetailsPage,
+                    children: [
+
+                    ]
+                },
+
+                {
+                    path: 'classification',
+                    component: classification,
+                    children: [
+                        {
+                            path: ':id',
+                            component: productDetails
+                        }
+                    ]
+                },
+
                 {
                     path: 'rank',
                     component: Rank,

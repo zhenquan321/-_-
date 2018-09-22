@@ -66,7 +66,6 @@
                                         <button>立即抢购</button>
                                     </mu-col>
                                 </mu-row>
-
                             </div>
                         </li>
                     </ul>
@@ -79,7 +78,7 @@
                         </h4>
                     </div>
                         <mu-row gutter class="jiageCardLsit">
-                            <mu-col class="jiageCard"  width="33"  @click="selectItem(item)" v-for="(item, index) in discListNew" :key="index">
+                            <mu-col class="jiageCard"  width="33"  @click="selectItem(item)" v-for="(item, index) in discListNew" v-if="index<6"  :key="index">
                                 <div class="icon">
                                     <img width="60" height="60" v-lazy="item.image_url" alt="discItem">
                                 </div>
@@ -427,23 +426,7 @@ export default {
         font-size: 14px;
         color: #FF5757;
     }
-    .addGm{
-        display: inline-block;
-        height: 20px;
-        width: 20px;
-        font-size:22px;
-        background: #FFFFFF;
-        border: 1px solid #C8C8C8;
-        border-radius: 4px;
-        margin-top: 18px;
-        float: right;
-        color: #44c050;
-        span{
-            position: relative;
-            top: -8px;
-            left: 3px;
-        }
-    }
+
 }
 .demo-popup-bottom {
   width: 100%;
