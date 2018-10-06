@@ -22,23 +22,29 @@
                     <mu-flexbox>
                         <mu-flexbox-item class="flex-demo">
                             <span class="tab-link">
-                                <img class="iconImg" src="~@/assets/image/icon/icon2.png"><span>伊甸套餐</span>
+                                <img class="iconImg" src="~@/assets/image/icon/icon1.png"><span>走进伊甸</span>
                             </span>
                         </mu-flexbox-item>
                         <mu-flexbox-item class="flex-demo">
-                            <span class="tab-link">
-                                <img class="iconImg" src="~@/assets/image/icon/icon4.png"><span>本周新菜</span>
-                            </span>
+                            <router-link tag="span" class="tab-item" :to="{path:'/main/singer', query:{cid:'1'}}" @click.native="refresh">
+                                <span class="tab-link">
+                                    <img class="iconImg" src="~@/assets/image/icon/icon4.png"><span>伊甸食材</span>
+                                </span>
+                            </router-link>
                         </mu-flexbox-item>
                         <mu-flexbox-item class="flex-demo">
-                            <span class="tab-link">
-                                <img class="iconImg" src="~@/assets/image/icon/icon3.png"><span>农场咨询</span>
-                            </span>
+                            <router-link tag="span" class="tab-item" :to="{path:'/main/singer', query:{cid:'2'}}" @click.native="refresh"> 
+                                <span class="tab-link">
+                                    <img class="iconImg" src="~@/assets/image/icon/icon3.png"><span>伊甸客房</span>
+                                </span>
+                            </router-link>
                         </mu-flexbox-item>
                         <mu-flexbox-item class="flex-demo">
-                            <span class="tab-link">
-                                <img class="iconImg" src="~@/assets/image/icon/icon1.png"><span>关于我们</span>
-                            </span>
+                            <router-link tag="span" class="tab-item" :to="{path:'/main/singer', query:{cid:'17'}}" @click.native="refresh">
+                                <span class="tab-link">
+                                    <img class="iconImg" src="~@/assets/image/icon/icon2.png"><span>伊甸套餐</span>
+                                </span>
+                            </router-link>
                         </mu-flexbox-item>
                     </mu-flexbox>
                 </div>
@@ -74,7 +80,9 @@
                     <div class="headerTitle">
                         <h1 class="HT-Title">最新上架</h1>
                         <h4 class="HT-selBtn">
-                            <span><span >更多>></span></span>
+                            <router-link tag="span" class="tab-item" :to="{path:'/main/singer', query:{library_id:''}}">
+                                <span><span >更多>></span></span>
+                            </router-link>
                         </h4>
                     </div>
                         <mu-row gutter class="jiageCardLsit">
@@ -178,6 +186,11 @@ export default {
             this.$refs.recommend.style.bottom = bottom;
             this.$refs.scroll.refresh();
         },
+        // 刷新页面
+        refresh() {
+            this.$router.go(0);  
+        },
+
         /**
          * @private
          * @function _getRecommend - 获取Slider数据
@@ -430,7 +443,7 @@ export default {
     .text h2{
         font-size: 12px;
         color: #333333;
-        margin-top: 4px;
+        margin-top: -2px;
         overflow:hidden;
         text-overflow:ellipsis;
         white-space:nowrap
@@ -440,7 +453,7 @@ export default {
         color: #888888;
         text-decoration:line-through;
         line-height: 12px;
-        margin-top: 10px;
+        margin-top: 4px;
     }
     .desc2{
         font-size: 14px;

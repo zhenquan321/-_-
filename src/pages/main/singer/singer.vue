@@ -3,19 +3,19 @@
         <div class="classification">
             <div class="CFheader">
                 <ul>
-                    <li @click="selectTypeFun(item)" v-for="(item, index) in Producttypes" :key="index" v-bind:class="{ active: selectType.cate_id==item.cate_id }" >{{item.cate_name}}</li>
+                    <li @click="selectTypeFun(item)"  v-for="(item, index) in Producttypes" :key="index" v-bind:class="{ active: selectType.cate_id==item.cate_id }" v-show="item.cate_name!='会员卡'&&item.cate_name!='每季新菜'">{{item.cate_name}}</li>
                 </ul>
             </div>
             <div class="CFtype">
                 <mu-row gutter v-if="!noProducttypes2">
-                    <mu-col  width="25" >
+                    <mu-col  width="30" >
                         <div  class="fenlei">
                             <ul>
                                 <li @click="selectTypeFun2(item)" v-for="(item, index) in Producttypes2" :key="index" v-bind:class="{ active: selectType2.cate_id==item.cate_id }">{{item.cate_name}}</li>
                             </ul>
                         </div>
                     </mu-col>
-                    <mu-col class="CFlist"  width="75" >
+                    <mu-col class="CFlist"  width="70" >
                         <ul class="list">
                             <li @click="selectProduct(item)" v-for="(item, index) in ProductList" class="item" :key="index">
                                 <div class="icon">
@@ -84,7 +84,8 @@ export default {
             selectType: '',
             selectType2: '',
             discList: [],
-            noProducttypes2: false
+            noProducttypes2: false,
+            cid: ''
         };
     },
     components: {
@@ -199,7 +200,17 @@ export default {
                 const res = await GoodsCateLists();
                 if (res.result === ERR_OK) {
                     this.Producttypes = res.cates;
-                    this.selectTypeFun(this.Producttypes[0]);
+                    this.cid = this.$route.query.cid || '';
+                    if (this.cid) {
+                        for (let i = 0; i < this.Producttypes.length; i++) {
+                            if (this.Producttypes[i].cate_id === this.cid) {
+                                this.selectTypeFun(this.Producttypes[i]);
+                                this.ci = '';
+                            }
+                        }
+                    } else {
+                        this.selectTypeFun(this.Producttypes[0]);
+                    }
                 }
             } catch (err) {
                 throw err;

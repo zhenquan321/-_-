@@ -8,14 +8,14 @@
             </div>
             <div class="CFtype">
                 <mu-row gutter >
-                    <mu-col  width="25" >
+                    <mu-col  width="33" >
                         <div  class="fenlei">
                             <ul>
                                 <li @click="selectTypeFun2(item)" v-for="(item, index) in Producttypes2" :key="index" v-bind:class="{ active: selectType2.cate_id==item.cate_id }">{{item.cate_name}}</li>
                             </ul>
                         </div>
                     </mu-col>
-                    <mu-col class="CFlist"  width="75" >
+                    <mu-col class="CFlist"  width="66" >
                         <ul class="list">
                             <li @click="selectProduct(item)" v-for="(item, index) in ProductList" class="item" :key="index">
                                 <div class="icon">

@@ -5,8 +5,11 @@
                 <div class="ShoppingCartIcon">
                     <i class="iconfont">&#xe656;</i>
                 </div>
+               
                 <p>您的购物车空空如也~</p>
-                <mu-raised-button  label="去逛逛" class="demo-raised-button" backgroundColor="#44c050"/>
+                <router-link tag="div" class="tab-item" to="/main/singer">
+                    <mu-raised-button  label="去逛逛" class="demo-raised-button" backgroundColor="#44c050"/>
+                </router-link>
             </div>
             <div class="goodsLsits">
                 <div class="header"></div>
@@ -19,6 +22,7 @@
         </div>
         <keep-alive>
             <router-view></router-view>
+            
         </keep-alive>
     </div>
 </template>
