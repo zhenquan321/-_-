@@ -5,26 +5,27 @@
         </div>
         <h1 class="title" v-html="title"></h1>
         <div class="bg-image" :style="bgStyle" ref="bgImage">
-            <div v-show="!recommends.length" class="slider-wrapper">
-                <div class="slider-content">
+            <div class="play-wrapper" v-show="songs.length>0">
+                <div class="play" ref="playBtn" @click="random">
+                    <i class="material-icons">play_circle_outline</i>
+                    <span class="text">随机播放全部</span>
+                </div>
+                <div class="favor" v-show="isDisc" @click="toggleFavorite" ref="favorBtn">
+                    <i class="material-icons">{{isFavorite?'favorite':'favorite_border'}}</i>
+                    <span class="text">{{isFavorite?'取消收藏':'收藏此歌单'}}</span>
                 </div>
             </div>
-            <!-- 注意此处, 必须有v-if, 否则获取不到数据使得slider的DOM出错-->
-            <div v-if="recommends.length" class="slider-wrapper">
-                <div class="slider-content">
-                    <slider ref="slider">
-                        <div v-for="(item,index) in recommends" :key="index">
-                            <!-- <a :href="item.linkUrl"> -->
-                                <img @load="loadImage" :src="item.image_url" alt="slider-img">
-                            <!-- </a> -->
-                        </div>
-                    </slider>
-                </div>
+            <div class="filter" ref="filter"></div>
+        </div>
+        <div class="bg-layer" ref="layer"></div>
+        <scroll @scroll="scroll" :probe-type="probeType" :listen-scroll="listenScroll" :data="songs" class="list" ref="list">
+            <div :class="['song-list-wrapper',{'pad':songs.length}]">
+                <song-list @select="selectItem" :songs="songs" :rank="rank"></song-list>
             </div>
-        </div>
-        <div class="title">
-
-        </div>
+            <div class="loading-container" v-show="!songs.length">
+                <loading></loading>
+            </div>
+        </scroll>
     </div>
 </template>
  <script>
@@ -45,10 +46,6 @@ export default {
     // mixins: [sheetMixin],
     props: {
         bgImage: {
-            type: String,
-            default: ''
-        },
-        creatorName: {
             type: String,
             default: ''
         },
@@ -81,8 +78,7 @@ export default {
     },
     data() {
         return {
-            scrollY: 0,
-            recommends: []
+            scrollY: 0
         };
     },
     created() {
@@ -92,6 +88,7 @@ export default {
     mounted() {
         this.imageHeight = this.$refs.bgImage.clientHeight;
         this.minTranslateY = -this.imageHeight + RESERVED_HEIGHT;
+        this.$refs.list.$el.style.top = `${this.$refs.bgImage.clientHeight}px`;
     },
     methods: {
         // handlePlayList(playList, bottomEnable = true) {
@@ -239,10 +236,9 @@ export default {
     padding-top: 70%;
     -webkit-transform-origin: top;
     transform-origin: top;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     margin-top: 44px;
-    background-position: center;
 }
 .play-wrapper {
     position: absolute;

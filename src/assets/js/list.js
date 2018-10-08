@@ -26,10 +26,10 @@ export class List {
 
 export function createList(listData, type = 'qq') {
     return new List({
-        id: listData.dissid,
+        id: listData.goods_id,
         type,
-        name: listData.dissname,
-        image: listData.imgurl,
-        creatorName: listData.creator.name
+        name: listData.goods_name,
+        image: listData.image_url,
+        creatorName: listData.goods_desc
     });
 }
