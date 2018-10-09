@@ -175,6 +175,7 @@ export default {
     methods: {
         // 点击进入详情
         selectItem(item) {
+            localStorage.setItem('selGood', JSON.stringify(item))
             const formatItem = createList(item).format();
             this.$router.push({
                 path: `/main/recommend/${formatItem.id}`

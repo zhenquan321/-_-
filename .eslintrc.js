@@ -92,6 +92,7 @@ module.exports = {
         "no-multi-spaces": 0,//不能用多余的空格
         "no-irregular-whitespace": 0,//不能有不规则的空
         "no-plusplus": 0,
+        "no-console": 0,
 
     }
 };

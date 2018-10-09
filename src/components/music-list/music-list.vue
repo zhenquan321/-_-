@@ -82,12 +82,14 @@ export default {
     data() {
         return {
             scrollY: 0,
-            recommends: []
+            recommends: [],
+            selGood: {}
         };
     },
     created() {
         this.probeType = 3;
         this.listenScroll = true;
+      
     },
     mounted() {
         this.imageHeight = this.$refs.bgImage.clientHeight;
@@ -137,6 +139,12 @@ export default {
         },
         toggleFavorite() {
             this.$emit('favoriteChange');
+        },
+        //获取产品数据
+        getData(){
+            this.selGood = JSON.parse(localStorage.getItem('selGood'));
+            console.log(this.selGood);
+            this.recommends = {};
         },
         ...mapActions(['selectPlay', 'randomPlay', 'setPopup'])
     },
